@@ -39,7 +39,7 @@ export const Login = (props) => {
     const responseFacebook = (response) => {
         console.log(response.status);
     };
-
+    
     return (
         <div className="flex items-center min-h-screen bg-gray-100 lg:justify-center">
             <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max flex-row flex-1 h-1/5">

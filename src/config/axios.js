@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const AUTH_URL = `http://localhost:5432`;
+const AUTH_URL = process.env.REACT_APP_API_URL; //`http://localhost:5432`;
 
 export const config = {
 

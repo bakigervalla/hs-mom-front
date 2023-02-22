@@ -1,5 +1,5 @@
 import axios from 'axios'
-let API_URL = ''; // 'http://localhost:8000/api';
+let API_URL = process.env.REACT_APP_API_URL; // 'http://localhost:8000/api';
 export const setPath = (path) => {
     // ENDPOINT_URI = process.env.API_URL + path;
     API_URL = process.env.REACT_APP_API_URL + path;  //'http://localhost:8000/api' + path
