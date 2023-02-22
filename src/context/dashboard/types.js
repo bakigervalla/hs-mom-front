@@ -1,0 +1,14 @@
+export const SET_LOADING = 'SET_LOADING';
+export const FETCH_APPS = 'GET_APPS';
+export const FETCH_SUBSCRIPTIONS = 'FETCH_SUBSCRIPTIONS';
+export const BUY_SUBSCRIPTIONS = 'BUY_SUBSCRIPTIONS';
+export const FETCH_METRICS = 'FETCH_METRICS';
+export const SET_ERROR = 'SET_ERROR';
+export const SET_SUBSCRIPTION = 'SET_SUBSCRIPTION';
+export const GET_CLIENTS = 'GET_CLIENTS';
+export const GET_PAGES = 'GET_PAGES';
+export const SAVE_PAGES = 'SAVE_PAGES';
+export const SOCIAL_PAGES = 'SOCIAL_PAGES';
+export const GET_INSIGHTS = 'GET_INSIGHTS';
+export const EMPTY_RESPONSE = 'EMPTY_RESPONSE';
+export const SET_AUTH = 'SET_AUTH';

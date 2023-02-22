@@ -1,0 +1,10 @@
+export const SET_LOADING = 'SET_LOADING';
+export const LOGIN = 'LOGIN';
+export const SET_USER_DATA = 'SET_USER_DATA';
+export const USER_REGISTRATION = 'USER_REGISTRATION';
+export const SET_ERROR = 'SET_ERROR';
+export const SET_MESSAGE = 'SET_MESSAGE';
+export const LOGOUT = 'LOGOUT';
+export const CHANGE_PASSWORD = 'CHANGE_PASSWORD';
+export const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
+export const RESET_PASSWORD = 'RESET_PASSWORD';
