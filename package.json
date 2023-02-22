@@ -31,9 +31,9 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production cross-env HTTPS=true react-scripts start",
-    "start-prod": "cross-env NODE_ENV=production react-scripts start",
-    "build": "cross-env NODE_ENV=production cross-env NODE_OPTIONS=--max-old-space-size=16192 react-scripts build",
+    "start": "NODE_ENV=production HTTPS=true react-scripts start",
+    "start-prod": "NODE_ENV=production react-scripts start",
+    "build": "NODE_ENV=production NODE_OPTIONS=--max-old-space-size=16192 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
