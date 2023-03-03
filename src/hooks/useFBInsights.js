@@ -10,6 +10,8 @@ const useFBInsights = (setLoading, setError, setPages) => {
     try {
       setLoading();
 
+      if (!pageId) return FB.logout();
+
       let login = await FB.initialize();
       if (!login.user_token) return setError("Facebook login failed");
 

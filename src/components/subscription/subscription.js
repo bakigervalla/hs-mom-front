@@ -7,14 +7,13 @@ import { AuthContext } from "../../context/auth/context";
 export const Subscription = () => {
     const navigate = useNavigate();
 
-    const { state, getSubscriptions, setSubscriptionId } =
-        useContext(MetricsContext) || {};
+    const { state, getSubscriptions, setSubscriptionId } = useContext(MetricsContext) || {};
     const { userData, refreshUserSubscriptions } = useContext(AuthContext);
     const { subscriptions, isOrderSuccessful } = state || {};
     const [current_sub_id] = useState(0);
 
     useEffect(() => {
-        getSubscriptions && getSubscriptions();
+        getSubscriptions();
         // eslint-disable-next-line
     }, []);
 

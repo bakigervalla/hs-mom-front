@@ -101,7 +101,8 @@ export const MetricsState = ({ children }) => {
     setLoading();
     try {
       const { data } = await client.get(`/orders/pages`);
-      return dispatch({ type: GET_PAGES, payload: data });
+      dispatch({ type: GET_PAGES, payload: data });
+      return data;
     } catch (err) {
       toast.error(err.response.data.error ?? "Page load failed");
       return dispatch({ type: SET_ERROR, payload: err.response.data.error });

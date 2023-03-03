@@ -77,12 +77,16 @@ export const AuthState = ({ children }) => {
     const register = async (new_user) => {
         setLoading();
         try {
+
             const { data, status } = await client.post("/users", new_user);
 
             if (status === 200) {
                 const { user, token } = data;
 
+                // auto-login user on registration
                 localStorage.setItem("hs-auth-token", token);
+                window.dispatchEvent(new Event("storage"));
+                dispatch({ type: SET_USER_DATA, payload: user });
 
                 dispatch({ type: USER_REGISTRATION, payload: user });
                 return true;

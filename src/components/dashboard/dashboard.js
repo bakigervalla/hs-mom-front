@@ -58,7 +58,9 @@ export const Dashboard = () => {
   useEffect(() => {
     if (!activeApp) return;
     (async () => {
-      await getPages();
+      let pages = await getPages();
+      if (pages.length > 0) _fetchFBInsights();
+      else setError("There are no page for this app");
     })();
     // eslint-disable-next-line
   }, [activeApp]);
@@ -85,7 +87,7 @@ export const Dashboard = () => {
   }, [connected, account]);
 
   const _fetchFBInsights = () => {
-    fetchFBInsights(activePage.page_id, activePage.page_token);
+    fetchFBInsights(activePage?.page_id, activePage?.page_token);
   };
 
   const _onChangeActiveApp = (app) => {
