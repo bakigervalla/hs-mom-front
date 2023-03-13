@@ -22,14 +22,16 @@ const initialize = async () => {
   let state = await checkLoginState();
   if (state && moment().unix() < state.data_access_expiration_time) {
     const { accessToken, userID } = state;
-    return { connected: 1, user_token: accessToken, user_id: userID };
+    return { user_token: accessToken, user_id: userID };
   } else {
     // login with facebook then authenticate with the API to get a JWT auth token
     const res = new Promise(window.FB.login);
     const { authResponse } = await res;
+    
+    if(!authResponse) return;
 
     const { accessToken, userID } = authResponse;
-    return { connected: 0, user_token: accessToken, user_id: userID };
+    return { user_token: accessToken, user_id: userID };
   }
   // get return url from location state or default to home page
   // const { from } = history.location.state || { from: { pathname: "/" } };
@@ -42,7 +44,7 @@ const getPageAccessToken = async (pageId, userToken) => {
       `/${pageId}?fields=access_token&access_token=${userToken}`,
       ({ access_token, error }) => {
         if (error) resolve({ success: false, error: error.message });
-        if (access_token) resolve({ success: true, pageToken: access_token });
+        if (access_token) resolve({ success: true, page_token: access_token });
       }
     );
   });

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../../../screens/Dashboard/flatsome.css";
+import "../../../screens/flatsome.css";
 
 export const LoginButton = () => {
   const navigate = useNavigate();

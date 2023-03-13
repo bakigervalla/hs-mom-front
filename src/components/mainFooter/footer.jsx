@@ -1,5 +1,5 @@
 import React from "react";
-import "../../screens/Dashboard/flatsome.css";
+import "../../screens/flatsome.css";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { ImLinkedin2, ImFacebook } from "react-icons/im";
 import { useNavigate } from "react-router-dom";

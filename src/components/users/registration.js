@@ -1,11 +1,9 @@
-import React, { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import React, { useState, useContext, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-import { MetricsContext } from "../../context/dashboard/context";
 import { AuthContext } from "../../context/auth/context";
 import { Spinner } from "../layout/spinner";
 
@@ -27,35 +25,25 @@ const RegistrationSchema = Yup.object().shape({
 });
 
 export const Registration = (props) => {
+  const [subscriptionId, setSubscriptionId] = useState([]);
+  
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const { state, buySubscription } = useContext(MetricsContext) || {};
-  const { register, login, isAuthenticated, loading } = useContext(AuthContext);
-
-  const { subscriptionId } = state || {};
+  const { loading, register } = useContext(AuthContext);
 
   useEffect(() => {
-    if (!subscriptionId) navigate("/subscription");
+    const { subscription_id } = location.state;
+    if (!subscription_id) if (!subscriptionId) navigate("/subscription");
+    setSubscriptionId(subscription_id);
+    // eslint-disable-next-line
   }, []);
 
-  const userRegister = async (values) => {
+  const createUser = async (values) => {
     Object.assign(values, { subscription_id: subscriptionId });
     var result = await register(values);
-    if (result) await purchaseSubscription(values);
-  };
-
-  const purchaseSubscription = async (user) => {
-    (async () => {
-      var result = await buySubscription({
-        subscription_id: subscriptionId,
-        client_id: 7,
-        description: `Purchased on ${new Date()}`,
-        status: 1,
-      });
-      if (!result) toast.success("Registration failed");
-      toast.success("Registered successfully");
-      navigate(`/dashboard`);
-    })();
+    if (result) return //error message is shown at the registration context;
+    navigate("/dashboard");
   };
 
   return (
@@ -76,7 +64,7 @@ export const Registration = (props) => {
                 password: "",
               }}
               validationSchema={RegistrationSchema}
-              onSubmit={userRegister}
+              onSubmit={createUser}
             >
               {({ errors, touched }) => (
                 <Form className="flex flex-col space-y-5">

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../screens/Dashboard/flatsome.css";
+import "../../screens/flatsome.css";
 import Logo from "./logo/logo";
 import { AiOutlineMenu, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { LoginButton } from "./loginButton/loginButton";

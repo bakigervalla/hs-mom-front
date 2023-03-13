@@ -91,10 +91,10 @@ export const AuthState = ({ children }) => {
                 dispatch({ type: USER_REGISTRATION, payload: user });
                 return true;
             } else {
-                toast.success("Your registration was successful.");
+                toast.success("Registered successfully.");
             }
         } catch (err) {
-            toast.error(err.response.data.error ?? "Unable to register.");
+            toast.error(err.response.data.error ?? "Registration failed.");
             return dispatch({
                 type: SET_ERROR,
                 payload: err.response.data.error ?? "Unable to register.",

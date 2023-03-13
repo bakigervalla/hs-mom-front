@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 
-import { MetricsState } from "./context/dashboard/context";
+import { DashboardContext } from "./context/dashboard/context";
 import { AuthenticatedApp } from "./routes/authenticated-app";
 import { UnauthenticatedApp } from "./routes/unauthenticated-app";
 
@@ -17,15 +17,7 @@ const App = () => {
     });
   }, []);
 
-  return userIsAuthenticated ? (
-    <MetricsState>
-      <AuthenticatedApp />
-    </MetricsState>
-  ) : (
-    <MetricsState>
-    <UnauthenticatedApp />
-    </MetricsState>
-  );
+  return userIsAuthenticated ? <AuthenticatedApp /> : <UnauthenticatedApp />;
 };
 
 export default App;

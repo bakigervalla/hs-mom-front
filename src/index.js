@@ -14,9 +14,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-  <AuthState>
-    <ToastContainer />
-    <App />
+    <AuthState>
+      <ToastContainer />
+      <App />
     </AuthState>
   </BrowserRouter>
 );

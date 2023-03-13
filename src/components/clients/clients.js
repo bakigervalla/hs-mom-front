@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { AuthContext } from "../../context/auth/context";
-import { MetricsContext } from "../../context/dashboard/context";
+import { DashboardContext } from "../../context/dashboard/context";
 
 import { TfiTrash } from "react-icons/tfi";
 import { ConfirmDialog } from "../shared/confirm-dialog";
@@ -10,7 +10,7 @@ export const Client = () => {
   const [isModalOpen, setModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const { userData } = useContext(AuthContext);
-  const { state, getPages, deletePage } = useContext(MetricsContext) || {};
+  const { state, getPages, deletePage } = useContext(DashboardContext) || {};
   const { pages } = state;
 
   useEffect(() => {

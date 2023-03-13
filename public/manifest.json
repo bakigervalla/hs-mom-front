@@ -10,12 +10,7 @@
     {
       "src": "./assets/images/HomeSourcing_logo.png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "./assets/images/HomeSourcing_logo.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "62x25"
     }
   ],
   "start_url": ".",

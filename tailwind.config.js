@@ -1,13 +1,11 @@
 module.exports = {
-  content: [ "./src/**/*.{html,js}", "./public/*.html" ],
+  content: ["./src/**/*.{html,js}", "./public/*.html"],
   theme: {
     extend: {
       minHeight: {
-          'custom': '234',
-          }
-     },
+        custom: "234",
+      },
+    },
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
-}
+  plugins: [require("flowbite/plugin")],
+};

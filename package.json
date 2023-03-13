@@ -31,7 +31,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production cross-env HTTPS=true react-scripts start",
+    "start": "cross-env NODE_ENV=development cross-env HTTPS=true react-scripts start",
     "start-prod": "cross-env NODE_ENV=production react-scripts start",
     "build": "cross-env NODE_ENV=production cross-env NODE_OPTIONS=--max-old-space-size=16192 react-scripts build",
     "test": "react-scripts test",

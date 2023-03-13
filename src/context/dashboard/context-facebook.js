@@ -30,9 +30,9 @@ const InitialState = {
   app: { name: "", token: "" },
 };
 
-export const DashboardContext = createContext(InitialState);
+export const FacebookContext = createContext(InitialState);
 
-export const DashboardState = ({ children }) => {
+export const FacebookState = ({ children }) => {
   // setPath('/metrics');
 
   const [state, dispatch] = useReducer(Reducer, InitialState);
@@ -251,7 +251,7 @@ export const DashboardState = ({ children }) => {
       type: SAVE_PAGES,
       payload: pages,
     });
-  }; 
+  };
 
   const savePages = async (pages, noAlert) => {
     setLoading();
@@ -536,8 +536,8 @@ export const DashboardState = ({ children }) => {
   );
 
   return (
-    <DashboardContext.Provider value={contextValue}>
+    <FacebookContext.Provider value={contextValue}>
       {children}
-    </DashboardContext.Provider>
+    </FacebookContext.Provider>
   );
 };

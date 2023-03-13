@@ -5,9 +5,9 @@ export const SessionExpired = ({ title, message, callbackTitle, callback }) => {
     <div className="w-full md:w-1/3 mx-auto">
       <div className="flex flex-col p-5 rounded-lg shadow bg-white">
         <div className="flex flex-col items-center text-center">
-          <div className="inline-block p-4 bg-yellow-50 rounded-full">
+          <div className="inline-block p-4 bg-transparent rounded-full">
             <svg
-              className="w-12 h-12 fill-current text-yellow-500"
+              className="w-12 h-12 fill-current text-yellow-500 bg-transparent"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -19,7 +19,7 @@ export const SessionExpired = ({ title, message, callbackTitle, callback }) => {
           <p className="mt-2 text-sm text-gray-600 leading-relaxed">{message}</p>
         </div>
 
-        <div className="flex items-center mt-3">
+        <div className="flex flex-col items-center text-center mt-3">
           <button
             className="sm:w-full lg:w-auto my-2 border rounded md py-1 px-8 text-center bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none 
             focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50"
